@@ -1,0 +1,17 @@
+{
+  "name": "cordova-phone-call-status-listener",
+  "version": "1.2.6",
+  "description": "",
+  "cordova": {
+    "id": "cordova-phone-call-status-listener",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}

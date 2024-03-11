@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-phone-call-status-listener" version="1.2.6" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PhoneCallStatusListener</name>
+    <js-module name="PhoneCallStatusListener" src="www/PhoneCallStatusListener.js">
+        <clobbers target="PhoneCallStatusListener"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PhoneCallStatusListener">
+                <!--改成通用的cordova插件的安装目录-->
+                <param name="android-package" value="com.android.phone.PhoneCallStatusListener" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.CALL_PHONE" />
+            <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        </config-file>
+        <source-file src="src/android/com.android.phone/PhoneCallStatusListener.java" target-dir="com.android.phone"/>
+        <source-file src="src/android/com.android.phone/CustomPhoneStateListener.java" target-dir="com.android.phone"/>
+        <source-file src="src/android/com.android.phone/PhoneStateReceiver.java" target-dir="com.android.phone"/>
+    </platform>
+</plugin>
